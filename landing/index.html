@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PocketLedger - Online Expense Tracking System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="/">Pocket<span>Ledger</span></a>
+    <nav>
+      <a href="#calculator">Try it</a>
+      <a href="#features">Features</a>
+      <a href="#architecture">Cloud design</a>
+      <a class="cta" href="/app/">Open the app</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Know where every rupee goes.</h1>
+      <p>Record income and expenses, set monthly budgets, and see your month at a glance. Your data is stored on the server, so it follows you to any device.</p>
+      <div class="actions">
+        <a class="cta" href="/app/login">Log in or sign up</a>
+        <a class="ghost" href="#calculator">Try the calculator</a>
+      </div>
+      <p class="status" id="status" aria-live="polite">Checking server...</p>
+    </div>
+    <div class="sample" aria-hidden="true">
+      <p class="muted">Sample month</p>
+      <div class="row"><span>Income</span><strong class="pos">52,000</strong></div>
+      <div class="row"><span>Expenses</span><strong class="neg">24,150</strong></div>
+      <div class="row total"><span>Left over</span><strong>27,850</strong></div>
+    </div>
+  </section>
+
+  <section id="calculator" class="block">
+    <h2>Quick monthly budget check</h2>
+    <p class="muted">Runs in your browser only. Nothing is saved.</p>
+    <form id="calc" class="calc" novalidate>
+      <label>Monthly income<input type="number" min="0" id="c-income" placeholder="e.g. 50000"></label>
+      <label>Rent and bills<input type="number" min="0" id="c-needs" placeholder="e.g. 18000"></label>
+      <label>Food and transport<input type="number" min="0" id="c-food" placeholder="e.g. 8000"></label>
+      <label>Shopping and fun<input type="number" min="0" id="c-fun" placeholder="e.g. 6000"></label>
+    </form>
+    <div id="calc-result" class="result" aria-live="polite">Enter your income and spending to see your savings.</div>
+  </section>
+
+  <section id="features" class="block alt">
+    <h2>What you can do</h2>
+    <ul class="features">
+      <li><h3>Track everything</h3><p>Add, edit and delete expenses and income with categories, dates and notes.</p></li>
+      <li><h3>Stay on budget</h3><p>Set a monthly limit per category. Bars turn amber at 80% and red when you overspend.</p></li>
+      <li><h3>See the trend</h3><p>A six-month chart and a category breakdown show where your money is going.</p></li>
+      <li><h3>Take your data</h3><p>Download every transaction as a CSV file for Excel or Google Sheets.</p></li>
+    </ul>
+  </section>
+
+  <section id="architecture" class="block">
+    <h2>Cloud architecture</h2>
+    <p class="muted">Three tiers, each of which can be scaled or replaced on its own.</p>
+    <div class="tiers">
+      <div><h3>Presentation</h3><p>This HTML, CSS and JavaScript site plus the React single-page app. Can be hosted on a CDN or object storage.</p></div>
+      <div><h3>Application</h3><p>Stateless Node.js and Express REST API with JWT login. Packaged in Docker and run behind a load balancer using <code>/api/health</code>.</p></div>
+      <div><h3>Data</h3><p>JSON file store for the demo. Swap <code>db.js</code> for MongoDB Atlas, Amazon RDS or DynamoDB in production.</p></div>
+    </div>
+  </section>
+
+  <footer>Online Expense Tracking System - Cloud Computing project</footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

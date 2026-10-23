@@ -1,0 +1,12 @@
+services:
+  expense-tracker:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      JWT_SECRET: change-this-secret-in-production
+    volumes:
+      - expense-data:/data
+    restart: unless-stopped
+volumes:
+  expense-data:
