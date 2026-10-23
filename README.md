@@ -1,5 +1,13 @@
 # Online Expense Tracking System (PocketLedger)
 
+## 🚀 Live Demo
+
+Experience the **Online Expense Tracking System** live:
+
+**Frontend:** [ExpenseTrack – Live Demo](https://online-expense-tracking-system-git-main-puji3.vercel.app/)
+
+**Backend API:** [ExpenseTrack – Backend](https://expensetrack-backend-oe3l.onrender.com)
+
 Cloud Computing project. Users record income and expenses, set monthly budgets per category, view a dashboard with charts, and export everything to CSV.
 
 **Tech used:** HTML, CSS, JavaScript (landing site) - React.js (single-page app) - Node.js + Express (REST API) - JWT authentication - Docker (cloud deployment)
